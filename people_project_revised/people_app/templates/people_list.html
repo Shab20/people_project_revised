@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>People List</h1>
+  <ul>
+    {% for person in people %}
+      <li>
+        <a href="{% url 'person_detail' person.id %}">
+        {{ person.name }} ({{ person.age }}) - {{ person.country }}
+      </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
